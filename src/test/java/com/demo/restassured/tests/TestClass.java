@@ -1,24 +1,23 @@
 package com.demo.restassured.tests;
 
-import io.restassured.response.Response;
 import com.demo.restassured.TestBase;
-import com.demo.restassured.messages.AssertionConstants;
 import com.demo.restassured.common.TestConstants;
 import com.demo.restassured.function.RequestGenerator;
+import com.demo.restassured.messages.AssertionConstants;
 import com.demo.restassured.model.request.PetCategory;
 import com.demo.restassured.model.request.PetCreateRequest;
 import com.demo.restassured.model.request.PetTag;
 import com.demo.restassured.model.response.PetPostResponse;
 import com.demo.restassured.util.ResponseUtil;
+import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class TestClass extends TestBase {
 
-    @Test
+    @Test(priority = 0)
     public void verifyPetCreation() {
         PetTag petTag = PetTag.builder().id(TestConstants.PET_TAG_ID).name(TestConstants.PET_TAG_NAME).build();
         List<PetTag> petTagList = new ArrayList<>();
